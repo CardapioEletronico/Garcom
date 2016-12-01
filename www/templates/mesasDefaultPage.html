@@ -1,0 +1,19 @@
+<ion-view title="Mesas Default Page" id="page4" style="background-color:#7E1616;">
+  <ion-content padding="true" class="has-header">
+    <div class="item item-body" id="mesasDefaultPage-list-item-container10">
+      <h1 id="mesasDefaultPage-heading7" style="color:#000000;font-weight:lighter;text-align:center;">Mesas</h1>
+      <form id="mesasDefaultPage-form13" class="list">
+        <form id="mesasDefaultPage-form14" class="list">
+          <label class="item item-select" id="mesasDefaultPage-select2" name="Mesas Abertas">
+            <span class="input-label">Abertas</span>
+            <select>
+              <!-- Isso aqui já tá pegando do serviço -->
+              <option ng-repeat="mesa in mesas">{{mesa.Id}}</option>
+          </select>
+          </label>
+          <button id="mesasDefaultPage-button14" class="button button-assertive  button-block icon-left ion-ios-trash">Fechar Mesa</button>
+        </form>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>

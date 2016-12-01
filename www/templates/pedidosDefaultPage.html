@@ -1,0 +1,15 @@
+<ion-view title="Pedidos Default Page" id="page3" style="background-color:#7E1616;">
+  <ion-content padding="true" class="has-header">
+    <div class="item item-body" id="pedidosDefaultPage-list-item-container11">
+      <h1 id="pedidosDefaultPage-heading8" style="color:#000000;font-weight:lighter;text-align:center;">Pedidos Prontos</h1>
+    </div>
+    <div class="item item-body" id="pedidosDefaultPage-list-item-container13">
+      <form id="pedidosDefaultPage-form20" class="list">
+        <h2 id="pedidosDefaultPage-heading11" style="color:#000000;text-align:center;">Mesa 1</h2>
+        <!-- <div ng-repeat="itempedido  in itenspedido"> -->
+        <ion-checkbox ng-repeat="itempedido in itempedidos" id="pedidosDefaultPage-checkbox7">{{itempedido.Id}} <-Tá pegando do serviço já </ion-checkbox>
+      <!-- </div> -->
+      </form>
+    </div>
+  </ion-content>
+</ion-view>
