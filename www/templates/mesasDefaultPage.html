@@ -4,13 +4,10 @@
       <h1 id="mesasDefaultPage-heading7" style="color:#000000;font-weight:lighter;text-align:center;">Mesas</h1>
       <form id="mesasDefaultPage-form13" class="list">
         <form id="mesasDefaultPage-form14" class="list">
-          <label class="item item-select" id="mesasDefaultPage-select2" name="Mesas Abertas">
-            <span class="input-label">Abertas</span>
-            <select>
-              <!-- Isso aqui já tá pegando do serviço -->
-              <option ng-repeat="mesa in mesas">{{mesa.Id}}</option>
+          <select class="item item-select" id="mesasDefaultPage-select2" name="Mesas Abertas">
+            <option class="input-label disabled">Abertas</span>
+            <option ng-repeat="mesa in mesas" class="input-label">{{mesa.Id}}</span>
           </select>
-          </label>
           <button id="mesasDefaultPage-button14" class="button button-assertive  button-block icon-left ion-ios-trash">Fechar Mesa</button>
         </form>
       </form>
