@@ -14,7 +14,12 @@ function ($scope, $stateParams) {
     console.log(eae);
     $scope.itempedidos = response.data;
 
-  });
+  })
+
+  $scope.remove = function($index){
+
+    $scope.itempedidos.splice($index, 1);
+  }
 
 })
 
@@ -27,7 +32,12 @@ function ($scope, $stateParams) {
     console.log(eae);
     $scope.mesas = response.data;
 
-  });
+  })
+
+  $scope.remove = function($index){
+
+    $scope.mesas.splice($index, 1);
+  }
 
 
 })

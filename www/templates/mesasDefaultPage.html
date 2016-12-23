@@ -1,16 +1,21 @@
-<ion-view title="Mesas Default Page" id="page4" style="background-color:#7E1616;">
+<ion-view title="Mesa" id="page4" style="background-color:#7E1616;">
   <ion-content padding="true" class="has-header">
     <div class="item item-body" id="mesasDefaultPage-list-item-container10">
-      <h1 id="mesasDefaultPage-heading7" style="color:#000000;font-weight:lighter;text-align:center;">Mesas</h1>
-      <form id="mesasDefaultPage-form13" class="list">
-        <form id="mesasDefaultPage-form14" class="list">
-          <select class="item item-select" id="mesasDefaultPage-select2" name="Mesas Abertas">
-            <option class="input-label disabled">Abertas</span>
-            <option ng-repeat="mesa in mesas" class="input-label">{{mesa.Id}}</span>
-          </select>
-          <button id="mesasDefaultPage-button14" class="button button-assertive  button-block icon-left ion-ios-trash">Fechar Mesa</button>
-        </form>
-      </form>
+      <h1 id="mesasDefaultPage-heading7" style="color:#000000;font-weight:lighter;text-align:center;">Mesas Abertas</h1>
+      <div class="item item-body">
+      <div ng-repeat="mesa in mesas" id="mesasDefaultPage-list-item-container2"  class="item item-body">
+        <div style="margin-top:0px;color:#000000;" id="mesasDefaultPage-markdown2">
+          <p style="border-style:none;" class="item item-icon-right" href="#" >
+            Mesa: {{mesa.Numero}}
+            <button  style=" background-color: Transparent; border:none;"  class="icon ion-ios-close" ng-click ="remove($index)"></button>
+          </p>
+
+        </div>
+      </div>
+
+
+    </div>
+
     </div>
   </ion-content>
 </ion-view>
