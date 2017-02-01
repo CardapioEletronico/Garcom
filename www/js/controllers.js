@@ -1,10 +1,37 @@
 angular.module('app.controllers', [])
 
-.controller('inicioTabDefaultPageCtrl', ['$scope', '$stateParams', // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+.controller('inicioTabDefaultPageCtrl',function ($scope, $http, $stateParams) {
+
+  var config = {
+    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+  }
+
+  var data = {
+    Mesa: 3,
+    Cliente: =Math.floor(Math.random()*9000) + 1000
+  };
+  //
+  // var pqp =Math.floor(Math.random()*9000) + 1000;
+  // console.log(pqp);
+  //
+  $scope.postAbertura = function(){
+    $http.post('http://10.21.0.137/20131011110061/api/abertura', data, config)
+      .success(function(data,status,headers,config){
+        $scope.PostDataResponse = data;
+      })
+      .error(function (data, status, header, config) {
+        $scope.ResponseDetails = "Data: " + data +
+        "<hr />status: " + status +
+        "<hr />headers: " + header +
+        "<hr />config: " + config;
+      });
+
+  };
 
 
-}])
+
+
+})
 
 .controller('pedidosDefaultPageCtrl', function ($scope, $stateParams, $http) {   // TIP: Access Route Parameters for your page via $stateParams.parameterName
   $http.get('http://10.21.0.137/20131011110061/api/itempedidoproduto').
