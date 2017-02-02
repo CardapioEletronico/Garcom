@@ -7,10 +7,19 @@
     <div class="spacer" style="width: 300px; height: 49px;"></div>
     <form id="inicioTabDefaultPage-form9" class="list">
       <label class="item item-input" id="inicioTabDefaultPage-input11">
-        <span class="input-label">Código de Abertura</span>
+        <span class="input-label">Código de Abertura: {{cliente}} </span>
         <input type="text" placeholder="">
       </label>
     </form>
-    <a ui-sref="tabsController.mesasDefaultPage" id="inicioTabDefaultPage-button5" style="text-align:left;" class="button button-balanced  button-block icon-right ion-android-checkmark-circle">Abrir Mesa!</a>
+
+    <label class="item item-input item-select">
+    <div class="input-label">
+      Mesas
+    </div>
+    <select ng-model="singleSelect"ng-change="search(singleSelect)">
+       <option ng-repeat ="mesa in Mesas">{{mesa.Id}}</option>
+    </select>
+  </label>
+    <a ui-sref="tabsController.mesasDefaultPage" id="inicioTabDefaultPage-button5" style="text-align:left;" ng-click="postAbertura();" class="button button-balanced  button-block icon-right ion-android-checkmark-circle">Abrir Mesa!</a>
   </ion-content>
 </ion-view>

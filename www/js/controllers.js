@@ -5,15 +5,32 @@ angular.module('app.controllers', [])
   var config = {
     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
   }
-
+  //
   var data = {
     Mesa: 3,
-    Cliente: =Math.floor(Math.random()*9000) + 1000
+    Cliente:Math.floor(Math.random()*9000) + 1000
+
   };
+  $scope.cliente = data.Cliente;
   //
   // var pqp =Math.floor(Math.random()*9000) + 1000;
   // console.log(pqp);
   //
+
+  $http.get('http://10.21.0.137/20131011110061/api/mesa').
+  then(function(response) {
+    var eae = response.data;
+    console.log(eae);
+    $scope.Mesas = response.data;
+
+  });
+
+
+
+
+
+
+
   $scope.postAbertura = function(){
     $http.post('http://10.21.0.137/20131011110061/api/abertura', data, config)
       .success(function(data,status,headers,config){
